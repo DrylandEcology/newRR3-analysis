@@ -4,7 +4,7 @@
 
 
 # Analyses for the `"newRR"` Project
-[![DOI](https://zenodo.org/badge/XXX.svg)](https://zenodo.org/badge/latestdoi/XXX)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.8310208.svg)](https://doi.org/10.5281/zenodo.8310208)
 
 Contact: Daniel R Schlaepfer [ORCiD](https://orcid.org/0000-0001-9973-2065)
 
