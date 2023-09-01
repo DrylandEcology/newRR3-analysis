@@ -1,0 +1,13 @@
+varname,short10
+Resistance_response,Resistance
+Resistance_prob.pred_L,RST_p_L
+Resistance_prob.pred_ML,RST_p_ML
+Resistance_prob.pred_M,RST_p_M
+Resistance_prob.pred_H.MH,RST_p_HMH
+Resistance_index,RST_index
+Resilience_response,Resilience
+Resilience_prob.pred_L,RSL_p_L
+Resilience_prob.pred_ML,RSL_p_ML
+Resilience_prob.pred_M,RSL_p_M
+Resilience_prob.pred_H.MH,RSL_p_HMH
+Resilience_index,RSL_index

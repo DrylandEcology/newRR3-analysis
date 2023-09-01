@@ -1,0 +1,14 @@
+## Raw data (downloaded from external sources, e.g., ScienceBase)
+data-raw/gsu/
+data-raw/mrrf/*_RFWorkflow_*
+data-raw/rsw2metrics/
+data-raw/spatialunits/
+
+## Items calculated/created by scripts
+data/
+displayitems/
+results/
+
+## Other items
+devel/
+.DS_Store
