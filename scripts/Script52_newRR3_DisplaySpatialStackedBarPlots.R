@@ -1079,6 +1079,8 @@ for (km in seq_along(mask_sets)) {
       #   - Vertical: timeperiods x RCPs
       #   - Horizontal: MIPs
 
+      used_responselabels <- "description" # "short10"
+
       figname <- file.path(
         dir_outitems,
         tag_outitems_figtu,
@@ -1114,7 +1116,7 @@ for (km in seq_along(mask_sets)) {
         xsut2[["Response"]] <- factor(
           meta[["varsets"]][["preds"]][["varname"]][xsut2[["Response"]]],
           levels = meta[["varsets"]][["preds"]][["varname"]],
-          labels = meta[["varsets"]][["preds"]][["short10"]]
+          labels = meta[["varsets"]][["preds"]][[used_responselabels]]
         )
 
         xsut2[["Var"]] <- gsub("_mirrp", "", xsut2[["Var"]])
@@ -1136,11 +1138,18 @@ for (km in seq_along(mask_sets)) {
         )
 
 
-        list_plots[[ip]] <- newRR3::plot_spatialtabulation_stackedbars(
+        tmp_plot <- newRR3::plot_spatialtabulation_stackedbars(
           data = xsut2,
           var_y = "SimSlice",
           colorscale = newRR3::colorscale_predictors19
         )
+
+        if (used_responselabels == "description") {
+          tmp_plot <- tmp_plot +
+            ggplot2::guides(fill = ggplot2::guide_legend(ncol = 3L))
+        }
+
+        list_plots[[ip]] <- tmp_plot
         ip <- ip + 1L
 
 
@@ -1148,7 +1157,7 @@ for (km in seq_along(mask_sets)) {
         dir.create(dirname(figname), recursive = TRUE, showWarnings = FALSE)
         grDevices::pdf(
           file = figname,
-          height = 4,
+          height = 4 + if (used_responselabels == "description") 0.75 else 0,
           width = 6.5
         )
         plot(

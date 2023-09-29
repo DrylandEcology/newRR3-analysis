@@ -1,20 +1,20 @@
-varname,short10
-Tmean_mean,Tmean_mn
-Trange_diurnal_mean,Trng_d_mn
-Tmean_coldestmonth_mean,Tmn_cld_mn
-Tmean_coldestmonth_sd,Tmn_cld_sd
-Tmean_hottestmonth_sd,Tmn_hot_sd
-PPT_mean,PPT_mn
-PPT_cv,PPT_cv
-Rain_mean,Rain_mn
-PPTinJAS_mean,PPTJAS_mn
-PPT_driestmonth_mean,PPT_dry_mn
-PET_cv,PET_cv
-ET_cv,ET_cv
-CWD_mean,CWD_mn
-CWD_mon_corr_temp_mean,CWD_sst_mn
-CWD_mon_cv_mean,CWD_ss_mn
-DDD_mean,DDD_mn
-DSI_duration_mean,DSI_dur_mn
-CorTempPPT_mean,PPT_sst_mn
-DeepDrainage_mean,Drain_mn
+varname,short10,description
+Tmean_mean,Tmean_mn,Mean temperature
+Trange_diurnal_mean,Trng_d_mn,Diurnal temperature range
+Tmean_coldestmonth_mean,Tmn_cld_mn,Temperature of coldest month
+Tmean_coldestmonth_sd,Tmn_cld_sd,SD(temperature of coldest month)
+Tmean_hottestmonth_sd,Tmn_hot_sd,SD(temperature of hottest month)
+PPT_mean,PPT_mn,Precipitation
+PPT_cv,PPT_cv,CV(precipitation)
+Rain_mean,Rain_mn,Rain
+PPTinJAS_mean,PPTJAS_mn,July-September precipitation
+PPT_driestmonth_mean,PPT_dry_mn,Precipitation in driest month
+PET_cv,PET_cv,CV(Potential ET)
+ET_cv,ET_cv,CV(ET)
+CWD_mean,CWD_mn,Climatic water deficit (CWD)
+CWD_mon_corr_temp_mean,CWD_sst_mn,Seasonal timing of CWD
+CWD_mon_cv_mean,CWD_ss_mn,Seasonal variability of CWD
+DDD_mean,DDD_mn,Dry-degree Days
+DSI_duration_mean,DSI_dur_mn,Duration of dry soils intervals
+CorTempPPT_mean,PPT_sst_mn,Seasonal timing of precipitation
+DeepDrainage_mean,Drain_mn,Deep drainage
