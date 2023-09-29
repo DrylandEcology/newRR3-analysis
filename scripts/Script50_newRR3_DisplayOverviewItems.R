@@ -39,9 +39,6 @@ stopifnot(dir.exists(dir_res))
 dir_dataraw_tu <- file.path(dir_dataraw, "spatialunits")
 stopifnot(dir.exists(dir_dataraw_tu))
 
-dir_res_tu <- file.path(dir_res, "SpatialUnits_Tabulations")
-stopifnot(dir.exists(dir_res_tu))
-
 
 
 #--- Paths (part 2) ------

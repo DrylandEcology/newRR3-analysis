@@ -51,9 +51,6 @@ stopifnot(dir.exists(dir_res))
 dir_dataraw_tu <- file.path(dir_dataraw, "spatialunits")
 stopifnot(dir.exists(dir_dataraw_tu))
 
-dir_res_tu <- file.path(dir_res, "SpatialUnits_Tabulations")
-stopifnot(dir.exists(dir_res_tu))
-
 
 dir_outitems <- file.path(dir_prj, "displayitems")
 dir.create(dir_outitems, recursive = TRUE, showWarnings = FALSE)
@@ -104,21 +101,6 @@ for (km in seq_along(mask_sets)) {
   st_NEadmin1 <- newRR3::load_NEadmin1_polygon(dir_dataraw_tu, crs_map)
 
   st_ecoregionL3 <- newRR3::load_ecoregions_polygon(dir_dataraw_tu, crs_map)
-
-  st_ecoregionSimple <- suppressWarnings(
-    # suppress: "attribute variables are assumed to be spatially constant throughout all geometries"
-    st_ecoregionL3 |>
-      # Subset to sagebrush biome polygon
-      sf::st_intersection(st_sagebiome) |>
-      sf::st_make_valid() |>
-      # union polygons by aggregated ecoregions
-      dplyr::group_by(!!rlang::sym("NA_AGGBREV")) |>
-      dplyr::summarize(
-        .groups = "keep",
-        do_union = TRUE
-      ) |>
-      sf::st_make_valid()
-  )
 
 
 
@@ -1179,7 +1161,7 @@ for (km in seq_along(mask_sets)) {
             switch(
               EXPR = style_figures,
               ESA = paste0("(", tmp0, ") "),
-              paste0(tmp, ") ")
+              paste0(tmp0, ") ")
             ),
             names(list_def_maps[[k0]][["vars"]][[kr]])[[kc]]
           )

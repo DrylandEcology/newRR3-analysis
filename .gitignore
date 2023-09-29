@@ -1,7 +1,7 @@
 ## Raw data (downloaded from external sources, e.g., ScienceBase)
 data-raw/gsu/
-data-raw/mrrf/*_RFWorkflow_*
-data-raw/rsw2metrics/
+data-raw/mrrf/
+data-raw/rsw2metrics/*_RFWorkflow_*
 data-raw/spatialunits/
 
 ## Items calculated/created by scripts
@@ -12,3 +12,7 @@ results/
 ## Other items
 devel/
 .DS_Store
+
+
+## Piggy-backed scripts
+scripts_*
