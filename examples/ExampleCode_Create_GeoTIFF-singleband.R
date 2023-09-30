@@ -9,9 +9,11 @@
 #     `"newRR3-analysis/results/newRR3_RATs-combined/"`
 #   * base/template `"GeoTIFFs` from the data release have been moved to
 #     `"newRR3-analysis/raw-data/gsu/"`
+#   * the associated R package `"newRR3"` (and dependencies) is installed
+#     (install with `remotes::install_github("DrylandEcology/newRR3-Rpackage")`)
 
 # Script `"scripts/Script20_newRR3_DataReleaseGeoTIFFsFromRATs.R"`
-# provides additional details.
+# provides additional details (see https://doi.org/10.5281/zenodo.8310208).
 
 # Expected output: masked, singleband `"GeoTIFF"`
 
