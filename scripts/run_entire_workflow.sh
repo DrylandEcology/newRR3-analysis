@@ -45,10 +45,13 @@ Rscript --verbose Script15_newRR3_RobustifyCategoricalDeltasAcrossModels.R
 Rscript --verbose Script16_newRR3_SimplifyCategoricalDeltasAcrossModels.R
 
 
-#------ Create multi-/single-band GeoTIFFs from RATs ------
+#------ Create multi-/single-band GeoTIFFs/COGs from RATs ------
 
-# -> results/newRR3_GeoTIFFs-combined/
+# -> results/newRR3_GeoTIFFs-sim/
 #Rscript --verbose Script20_newRR3_DataReleaseGeoTIFFsFromRATs.R
+
+# -> results/newRR3_COGs-sim/
+#Rscript --verbose Script21_newRR3_DataReleaseResaveRenameGeoTIFFsToCOGs.R
 
 
 #------ Tabulate spatial summaries ------

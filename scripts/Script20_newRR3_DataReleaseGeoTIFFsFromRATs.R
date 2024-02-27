@@ -20,6 +20,8 @@ library("doFuture")
 library("foreach")
 library("progressr")
 
+filetype <- "COG" # c("GTiff", "COG")
+
 n_workers <- 8L
 
 # Select sets of RATs to convert ot GeoTIFFs
@@ -74,6 +76,11 @@ stopifnot(
 )
 
 
+stopifnot(
+  filetype %in% c("GTiff", "COG")
+)
+
+
 #------ . ------
 #------ LOOP OVER SPATIAL MASKS ------
 for (km in seq_along(mask_sets)) {
@@ -83,7 +90,11 @@ for (km in seq_along(mask_sets)) {
   #--- Paths (part 2) ------
   dir_data_gt <- file.path(
     dir_res,
-    paste0("newRR3_GeoTIFFs-", mask_sets[[km]])
+    paste0(
+      "newRR3_",
+      switch(filetype, GTiff = "GeoTIFFs", COG = "COGs"),
+      "-", mask_sets[[km]]
+    )
   )
 
   dir_data_rat <- file.path(
@@ -379,7 +390,13 @@ for (km in seq_along(mask_sets)) {
             fname = list_out_gt[["fout"]][[ki]],
             names_rat = vtagk,
             rat2 = rat2,
-            overwrite = FALSE
+            overwrite = FALSE,
+            filetype = filetype,
+            gdal_write_options = switch(
+              EXPR = filetype,
+              GTiff = c("COMPRESS=LZW", "TFW=YES", "TILED=YES"),
+              COG = "COMPRESS=DEFLATE"
+            )
           )
         }
 
